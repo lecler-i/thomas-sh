@@ -4,9 +4,14 @@ branches:
   only:
   - master
 
-before_script:
-- git config --global user.name 'lecler-i via Travis CI'
-- git config --global user.email 'travis@noemail.com'
-
 script:
-- npm run deploy
+- yarn build
+
+deploy:
+  provider: pages
+  skip_cleanup: true
+  repo: 'lecler-i.github.io'
+  github_token: $GITHUB_TOKEN
+  on:
+    branch: master
+  local_dir: 'public'
