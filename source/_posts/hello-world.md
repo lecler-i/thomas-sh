@@ -1,38 +1,12 @@
 ---
-title: Hello World
+title: Hello World !
 ---
-Welcome to [Hexo](https://hexo.io/)! This is your very first post. Check [documentation](https://hexo.io/docs/) for more info. If you get any problems when using Hexo, you can find the answer in [troubleshooting](https://hexo.io/docs/troubleshooting.html) or you can ask me on [GitHub](https://github.com/hexojs/hexo/issues).
 
-## Quick Start
+This is my personnal website, that I will use as portfolio and to post random articles on the blog section of it.
 
-### Create a new post
+I build it using [Hexo](https://hexo.io/), a javascript framework to build static websites from mardown mostly.
 
-``` bash
-$ hexo new "My New Post"
-```
+You can find the source code of this website on gitub : [lecler-i/thomas.sh](https://github.com/lecler-i/thomas.sh)
 
-More info: [Writing](https://hexo.io/docs/writing.html)
+It is hosted on GithubPages and deployed automaticly using Travis-ci.
 
-### Run server
-
-``` bash
-$ hexo server
-```
-
-More info: [Server](https://hexo.io/docs/server.html)
-
-### Generate static files
-
-``` bash
-$ hexo generate
-```
-
-More info: [Generating](https://hexo.io/docs/generating.html)
-
-### Deploy to remote sites
-
-``` bash
-$ hexo deploy
-```
-
-More info: [Deployment](https://hexo.io/docs/deployment.html)
