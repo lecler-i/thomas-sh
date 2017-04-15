@@ -1,11 +1,12 @@
 language: node_js
+
 branches:
   only:
   - master
 
 before_script:
 - git config --global user.name 'lecler-i via Travis CI'
-- git config --global user.email 'contact@thomas.sh'
+- git config --global user.email 'travis@noemail.com'
 
 script:
 - npm run deploy
