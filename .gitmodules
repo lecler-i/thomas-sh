@@ -1,0 +1,3 @@
+[submodule "themes/ochuunn-dark"]
+	path = themes/ochuunn-dark
+	url = https://github.com/lecler-i/hexo-theme-ochuunn-dark.git
