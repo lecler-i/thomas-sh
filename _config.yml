@@ -68,12 +68,14 @@ theme: ochuunn-dark
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
-  type:
+  type: git
+  repo: git@github.com:lecler-i/lecler-i.github.io.git
+  branch: master
 
 
 # head
 menu:
-  Meeee: /me
+  Me: /me
   Blog: /blog
   # sitemap: /sitemap.xml
   # other menus
