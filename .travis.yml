@@ -13,7 +13,7 @@ script:
 deploy:
   provider: pages
   skip_cleanup: true
-  repo: 'lecler-i.github.io'
+  repo: 'lecler-i/lecler-i.github.io'
   github_token: $GITHUB_TOKEN
   on:
     branch: master
