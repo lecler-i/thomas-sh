@@ -10,3 +10,4 @@ You can find the source code of this website on gitub : [lecler-i/thomas.sh](htt
 
 It is hosted on GithubPages and deployed automaticly using Travis-ci.
 
+{% github lecler-i thomas.sh f9221b2 %}
