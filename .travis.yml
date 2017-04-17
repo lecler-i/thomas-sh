@@ -12,6 +12,7 @@ deploy:
   repo: 'lecler-i/lecler-i.github.io'
   target_branch: 'master'
   github_token: $GITHUB_TOKEN
+  fqdn: 'https://thomas.sh'
   local_dir: 'public'
   on:
     branch: master
