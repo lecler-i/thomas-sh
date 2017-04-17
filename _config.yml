@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://thomas.sh
+url: https://thomas.sh
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -85,8 +85,7 @@ css_minifier:
 js_minifier:
   enable: true
   mangle: true
-  output:
-  compress:
+  outputs: bundle.js
   exclude: 
     - '*.min.js'
 
@@ -100,8 +99,8 @@ image_minifier:
 
 # head
 menu:
-  Me: /me
-  Blog: /blog
+  Me: /me/
+  Blog: /blog/
   # sitemap: /sitemap.xml
   # other menus
 
@@ -119,4 +118,3 @@ hjid: false      # your hjid (hotjar)
 
 start_year: 2017
 
-reward_image: /img/wechat.png
