@@ -1,5 +1,5 @@
 ---
-Titre: Thomas LECLERCQ date: 2017-04-15 21: 03: 51
+title: Thomas LECLERCQ
 ---
 
 Étudiant en informatique, j'adore la musique, le code, les chattons et le voyage !
