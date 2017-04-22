@@ -109,7 +109,7 @@ favicon: /favicon.png
 
 
 google_verification: false  # your token
-google_analytics: false     # your id
+google_analytics: 'UA-97889597-1'     # your id
 
 disqus_shortname: false     # your disqus name
 
