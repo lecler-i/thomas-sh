@@ -108,7 +108,7 @@ rss: /atom.xml
 favicon: /favicon.png
 
 
-google_verification: false  # your token
+google_verification: 'r9zstTyGw3zt9mU9OneUO8limw0YViOn4y1xKGyJPgE'  # your token
 google_analytics: 'UA-97889597-1'     # your id
 
 disqus_shortname: false     # your disqus name
