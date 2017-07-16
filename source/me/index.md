@@ -3,7 +3,7 @@ title: Thomas LECLERCQ
 ---
 
 Étudiant en informatique, j'adore la musique, le code, les chattons et le voyage !
-J'ai créer ce petit blog/site car... j'avais avant tout besoin d'un espace où vous pouvez (vous, qui lisez ceci) en apprendre un peu plus sur moi et mes projets :-)
+J'ai créé ce petit blog/site car... j'avais avant tout besoin d'un espace où vous pouvez (vous, qui lisez ceci) en apprendre un peu plus sur moi et mes projets :-)
 
 Je suis dev C./C++ de formation mais je ne m'attarde très peu sur ces deux languages,
 avant tout passionné par tout ce qui touche à l'IT, je suis un gros consommateur d'Open Source et j'essaye petit à petit d'y être un acteur
