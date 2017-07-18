@@ -1,3 +1,8 @@
+stages:
+  - build
+  - release
+  - deploy
+
 build:static:
   image: node:latest
   stage: build
@@ -11,15 +16,17 @@ build:static:
     - npm install
     - npm build
 
-deploy:image:
+release:image:
   image: docker:latest
   stage: deploy
   variables:
     DOCKER_DRIVER: overlay
+    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
   services:
     - docker:dind
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
-    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $REGISTRY
     - docker build -t registry.gitlab.com/lecler-i/thomas.sh .
     - docker push registry.gitlab.com/lecler-i/thomas.sh
   only:
