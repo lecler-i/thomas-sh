@@ -14,7 +14,7 @@ build:static:
       - public/
   script:
     - npm install
-    - npm build
+    - npm run build
 
 release:image:
   image: docker:latest
