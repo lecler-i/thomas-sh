@@ -11,15 +11,12 @@ build:static:
     - npm install
     - npm build
 
-build:image:
+deploy:image:
   image: docker:latest
-  stage: build
-  dependencies:
-    - build:static
+  stage: deploy
   script:
     - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $REGISTRY
     - docker build -t registry.gitlab.com/lecler-i/thomas.sh .
     - docker push registry.gitlab.com/lecler-i/thomas.sh
-
   only:
     - master
