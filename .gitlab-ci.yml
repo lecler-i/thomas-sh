@@ -1,16 +1,23 @@
-image: node:4.2.2
-
-pages:
+build-static:
+  image: node:latest
+  stage: build
   cache:
     paths:
       - node_modules/
-
+  artifacts:
+    paths:
+      - public
   script:
     - npm install
     - npm build
 
-  artifacts:
-    paths:
-      - public
+build-image:
+  image: docker:latest
+  stage: build
+  script:
+    - ls ./public
+    - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN $REGISTRY
+    - docker build -t $REGISTRY/<PROJECT-GROUP>/<PROJECT-NAME> .
+    - docker push $REGISTRY/<PROJECT-GROUP>/<PROJECT-NAME>
   only:
     - master
