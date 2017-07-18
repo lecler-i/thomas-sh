@@ -1,4 +1,4 @@
-static:
+build:static:
   image: node:latest
   stage: build
   cache:
@@ -11,7 +11,7 @@ static:
     - npm install
     - npm build
 
-image:
+build:image:
   image: docker:latest
   stage: build
   dependencies:
