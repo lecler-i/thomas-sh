@@ -15,11 +15,10 @@ build:static:
   script:
     - npm install
     - npm run build
-    - ls public
 
 release:image:
   image: docker:latest
-  stage: deploy
+  stage: release
   variables:
     DOCKER_DRIVER: overlay
     IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
@@ -28,8 +27,13 @@ release:image:
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
-    - ls public
     - docker build -t registry.gitlab.com/lecler-i/thomas.sh .
     - docker push registry.gitlab.com/lecler-i/thomas.sh
   only:
     - master
+
+deploy:rancher:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment production --stack thomas-sh --service web
