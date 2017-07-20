@@ -15,6 +15,8 @@ build:static:
   script:
     - npm install
     - npm run build
+  variables:
+    GIT_SUBMODULE_STRATEGY: recursive
 
 release:image:
   image: docker:latest
@@ -42,3 +44,4 @@ variables:
   DOCKER_DRIVER: overlay
   IMAGE_TAG_CURRENT: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
   IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
+
