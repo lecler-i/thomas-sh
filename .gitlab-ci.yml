@@ -19,10 +19,6 @@ build:static:
 release:image:
   image: docker:latest
   stage: release
-  variables:
-    DOCKER_DRIVER: overlay
-    IMAGE_TAG_CURRENT: registry.gitlab.com/lecler-i/thomas.sh:$CI_COMMIT_REF_NAME
-    IMAGE_TAG_LATEST: registry.gitlab.com/lecler-i/thomas.sh:latest
   services:
     - docker:dind
   before_script:
@@ -40,4 +36,10 @@ deploy:rancher:
   stage: deploy
   image: cdrx/rancher-gitlab-deploy
   script:
-    - upgrade --environment production --stack thomas-sh --service web
+    - upgrade --environment production --stack thomas-sh --service web --new-image $IMAGE_TAG_CURRENT
+
+variables:
+  DOCKER_DRIVER: overlay
+  IMAGE_TAG_CURRENT: registry.gitlab.com/lecler-i/thomas.sh:$CI_COMMIT_SHA
+  IMAGE_TAG_LATEST: registry.gitlab.com/lecler-i/thomas.sh:latest
+  
