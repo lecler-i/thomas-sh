@@ -12,11 +12,13 @@ build:static:
   artifacts:
     paths:
       - public/
+  before_script:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive
+
   script:
     - npm install
     - npm run build
-  variables:
-    GIT_SUBMODULE_STRATEGY: recursive
 
 release:image:
   image: docker:latest
