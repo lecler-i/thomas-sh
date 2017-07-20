@@ -22,7 +22,7 @@ release:image:
   services:
     - docker:dind
   before_script:
-    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
   script:
     - docker build -t $IMAGE_TAG_CURRENT .
     - docker push $IMAGE_TAG_CURRENT
@@ -40,6 +40,5 @@ deploy:rancher:
 
 variables:
   DOCKER_DRIVER: overlay
-  IMAGE_TAG_CURRENT: registry.gitlab.com/lecler-i/thomas.sh:$CI_COMMIT_SHA
-  IMAGE_TAG_LATEST: registry.gitlab.com/lecler-i/thomas.sh:latest
-  
+  IMAGE_TAG_CURRENT: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
