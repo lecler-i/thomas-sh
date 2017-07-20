@@ -21,14 +21,18 @@ release:image:
   stage: release
   variables:
     DOCKER_DRIVER: overlay
-    IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_REF_NAME
+    IMAGE_TAG_CURRENT: registry.gitlab.com/lecler-i/thomas.sh:$CI_COMMIT_REF_NAME
+    IMAGE_TAG_LATEST: registry.gitlab.com/lecler-i/thomas.sh:latest
   services:
     - docker:dind
   before_script:
     - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN registry.gitlab.com
   script:
-    - docker build -t registry.gitlab.com/lecler-i/thomas.sh .
-    - docker push registry.gitlab.com/lecler-i/thomas.sh
+    - docker build -t $IMAGE_TAG_CURRENT .
+    - docker push $IMAGE_TAG_CURRENT
+    - docker tag $IMAGE_TAG_CURRENT $IMAGE_TAG_LATEST
+    - docker push $IMAGE_TAG_LATEST
+    
   only:
     - master
 
