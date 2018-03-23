@@ -65,18 +65,6 @@ pagination_dir: page
 ## Themes: https://hexo.io/themes/
 theme: cactus
 
-# Deployment
-## Docs: https://hexo.io/docs/deployment.html
-deploy:
-  type: git
-  repo: git@github.com:lecler-i/lecler-i.github.io.git
-  branch: master
-
-html_minifier:
-  enable: true
-  ignore_error: false
-  exclude:
-
 css_minifier:
   enable: true
   exclude:
@@ -97,6 +85,15 @@ image_minifier:
   pngquant: false
   progressive: true
 
+feed:
+  type: atom
+  path: atom.xml
+  limit: 20
+  hub:
+  content:
+  content_limit: 140
+  content_limit_delim: ' '
+
 theme_config:
     # head
   description: index.md
@@ -111,7 +108,7 @@ theme_config:
   nav:
     home: /
     about: /about/
-    Blog: /posts/
+    Blog: /blog/
     Github: https://github.com/lecler-i
     # sitemap: /sitemap.xml
     # other menus
@@ -124,13 +121,4 @@ theme_config:
   favicon: /favicon.png
 
 
-google_verification: 'r9zstTyGw3zt9mU9OneUO8limw0YViOn4y1xKGyJPgE'  # your token
-google_analytics: 'UA-97889597-1'     # your id
-
-disqus_shortname: false     # your disqus name
-
-live2d: false    # true
-hjid: false      # your hjid (hotjar)
-
-start_year: 2017
 
