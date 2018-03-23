@@ -1,0 +1,49 @@
+stages:
+  - build
+  - release
+  - deploy
+
+build:static:
+  image: node:latest
+  stage: build
+  cache:
+    paths:
+      - node_modules/
+  artifacts:
+    paths:
+      - public/
+  before_script:
+    - git submodule sync --recursive
+    - git submodule update --init --recursive
+
+  script:
+    - npm install
+    - npm run build
+
+release:image:
+  image: docker:latest
+  stage: release
+  services:
+    - docker:dind
+  before_script:
+    - docker login -u gitlab-ci-token -p $CI_JOB_TOKEN $CI_REGISTRY
+  script:
+    - docker build -t $IMAGE_TAG_CURRENT .
+    - docker push $IMAGE_TAG_CURRENT
+    - docker tag $IMAGE_TAG_CURRENT $IMAGE_TAG_LATEST
+    - docker push $IMAGE_TAG_LATEST
+    
+  only:
+    - master
+
+deploy:rancher:
+  stage: deploy
+  image: cdrx/rancher-gitlab-deploy
+  script:
+    - upgrade --environment production --stack thomas-sh --service web --new-image $IMAGE_TAG_CURRENT
+
+variables:
+  DOCKER_DRIVER: overlay
+  IMAGE_TAG_CURRENT: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHA
+  IMAGE_TAG_LATEST: $CI_REGISTRY_IMAGE:latest
+
