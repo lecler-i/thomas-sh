@@ -5,7 +5,7 @@
 # Site
 title: ./Thomas.sh
 subtitle:
-description:
+description: gegreg Hi, I'm a theme for the [Hexo](http://hexo.io) blogging framework. I'm particularly great for a personal web page with a simple blog. In this paragraph, you can provide some information about yourself. Below, you're most recent or highlited writings and projects are listed.
 author: Thomas LECLERCQ
 language: en
 timezone:
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
-theme: ochuunn-dark
+theme: cactus
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -79,14 +79,14 @@ html_minifier:
 
 css_minifier:
   enable: true
-  exclude: 
+  exclude:
     - '*.min.css'
 
 js_minifier:
   enable: true
   mangle: true
   outputs: bundle.js
-  exclude: 
+  exclude:
     - '*.min.js'
 
 image_minifier:
@@ -97,15 +97,31 @@ image_minifier:
   pngquant: false
   progressive: true
 
-# head
-menu:
-  Me: /me/
-  Blog: /blog/
-  # sitemap: /sitemap.xml
-  # other menus
+theme_config:
+    # head
+  description: index.md
+  social_links:
+    github: https://github.com/lecler-i
+    linkedin: https://linkedin.com/leclercqthomas
+    telegram: "+33644644393"
+    mail: mailto:contact@thomas.sh
 
-rss: /atom.xml
-favicon: /favicon.png
+  projects_url: http://github.com/lecler-i
+
+  nav:
+    home: /
+    about: /about/
+    Blog: /posts/
+    Github: https://github.com/lecler-i
+    # sitemap: /sitemap.xml
+    # other menus
+
+  posts_overview:
+    show_all_posts: false
+    post_count: 5
+
+  rss: /atom.xml
+  favicon: /favicon.png
 
 
 google_verification: 'r9zstTyGw3zt9mU9OneUO8limw0YViOn4y1xKGyJPgE'  # your token
