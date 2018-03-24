@@ -5,7 +5,7 @@
 # Site
 title: ./Thomas.sh
 subtitle:
-description: gegreg Hi, I'm a theme for the [Hexo](http://hexo.io) blogging framework. I'm particularly great for a personal web page with a simple blog. In this paragraph, you can provide some information about yourself. Below, you're most recent or highlited writings and projects are listed.
+description: Hi, I'm a Thomas, this is my personal website with a little blog.<br /><br/>Freelancer and traveller (aka digital Nomad), I work a lot with the latest Node.JS Techs (focused mainly on ReactNative and React.js ecosystem) and love to tweak constantly my development workflow and server architecture (DevOps).<br /><br />On the blog, I will try to speak about cool stuff that I use in my projects, linux, opensource and privacy.
 author: Thomas LECLERCQ
 language: en
 timezone:
@@ -60,11 +60,6 @@ time_format: HH:mm:ss
 per_page: 10
 pagination_dir: page
 
-# Extensions
-## Plugins: https://hexo.io/plugins/
-## Themes: https://hexo.io/themes/
-theme: cactus
-
 css_minifier:
   enable: true
   exclude:
@@ -93,6 +88,8 @@ feed:
   content:
   content_limit: 140
   content_limit_delim: ' '
+
+theme: cactus
 
 theme_config:
     # head
